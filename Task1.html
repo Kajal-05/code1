@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			
+			color: tomato;
+			background: darkgray;
+		}
+		h1{
+			
+			font-family: serif;
+			font-weight: normal;
+   			 margin: 70px auto;
+    		text-align: center;
+		}
+	</style>
+</head>
+<body>
+	
+	<h1>Email and Password Validation Form</h1>
+	<script >
+		function validation()
+		{
+			var email = document.myform.email.value;
+			var password = document.myform.password.value;
+
+		 
+			
+			if ((email=="")||(password==""))
+			{
+				alert("email and password can't be blank");
+				
+			}
+
+			else if((email.charAt(email.length-4)!='.')&&(email.charAt(email.length-3)!='.'))
+			{
+
+				alert("invalid . position");
+				 
+
+			}
+			else if(email.indexOf('@')=0)
+			{
+				alert("invalid @ position");
+				
+			}			
+			
+			else if(password.length<8)
+			{
+				alert("password must be 8 charcter long.");
+				
+			}
+			
+			else
+			{
+				alert("form submitted succesfully")
+			}
+		}
+
+	</script>
+	<form name = "myform" onsubmit="return validation()" style="text-align: center;">
+		Email:<input type="text" name="email" ><br><br>
+		Password:<input type="password" name="password" ><br><br>
+		<input type="submit" value="Login" >
+	
+
+	</form>
+
+</body>
+</html>
